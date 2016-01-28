@@ -1,0 +1,366 @@
+@import "lesshat.less";
+@import "bootstrap/variables.less";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+body {
+  background-color: #f7f7f7;
+  position: relative;
+  &.noScroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+@header-h1: 85px;
+@header-p: 24px;
+@expand-h1: 65px;
+@expand-h3: 36px;
+@expand-p: 24px;
+nav {
+  background: #fff;
+  padding: 18px 0;
+  .display(flex);
+  .container {
+    .display(flex);
+    align-items: center;
+    .justify-content(space-between);
+    .logo {
+      .display(flex);
+      .justify-content(flex-start);
+      align-items: center;
+      p {
+        text-align: right;
+        color: #353738;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 16px;
+        width: 91px;
+        margin-bottom:0;
+      }
+      img {
+        .size(80px);
+        float: left;
+      }
+    }
+    .links {
+      width: 100%;
+      .display(flex);
+      .justify-content(flex-end);
+      a {
+        padding: 0 20px;
+        color: #353738;
+        font-size: 16px;
+        font-weight: 700;
+        &:hover,
+        .active {
+          color: #0af;
+        }
+
+      }//a
+    }//links
+  }
+}
+
+header {
+  text-align: center;
+  padding: 80px 0;
+  h1 {
+    font-size: @header-h1;
+    font-weight: 700;
+    line-height: 100px;
+    color: #353738;
+    strong {
+      color: #0af;
+    }
+  }
+  p {
+    font-size: @header-p;
+    font-weight: 400;
+    line-height: 34px;
+    color: #353738;
+    a {
+      color: #0af;
+    }
+  }
+}
+
+.expand-content {
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  padding: 70px 0;
+  color: #fff;
+  text-align: center;
+  max-height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  &.expand-project {
+    height: auto;
+    padding-bottom: 0;
+    img {
+      margin: 0 auto;
+    }
+  }
+  .close-div {
+    .size(45px);
+    position:fixed;
+    top: -100px;
+    right: 45px;
+    .transition(all 1s ease);
+  }
+  &.expand-click {
+    cursor: pointer;
+  }
+  &.expand-content__light-blue {
+    background-color: #0af;
+    .header-text {
+      .back-text {
+        color: darken(#0096ff, 10%);
+      }
+    }
+  }
+  &.expand-content__red {
+    background-color: #e65450;
+    .header-text {
+      .back-text {
+        color: darken(#e65450, 10%);
+      }
+    }
+  }
+  &.expand-content__blue {
+    background-color: #0074d8;
+    .header-text {
+      .back-text {
+        color: darken(#0074d8, 10%);
+      }
+    }
+  }
+  &.expand-content__expanded {
+    overflow-y: auto;
+    .close-div {
+      .transition(all 1s ease);
+      top: 45px;
+    }
+  }
+  p {
+    font-size: @expand-p;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  h1 {
+    color: white;
+    font-size: @expand-h1;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: @expand-h3;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .header-text {
+    height: 145px;
+    position: relative;
+    .display(flex);
+    align-items: center;
+    .justify-content(center);
+    margin: 70px 0;
+    .back-text {
+      font-size: 196px;
+      font-weight: 700;
+      line-height: 145px;
+      position: absolute;
+      top:0;
+      left:0;
+      bottom:0;
+    }
+  }
+  .resume {
+    padding-bottom: 40px;
+  }
+  .mobile-images {
+    .display(flex);
+    flex-wrap: nowrap;
+    justify-content: center;
+    .image-wrap {
+      padding: 0 10px;
+    }
+    img {
+      max-width: 100%;
+      height: auto
+    }
+  }
+  .mobile-images,
+  .labtop-images,
+  .desktop-images {
+    padding: 40px 0;
+  }
+}
+
+.clientes {
+  .row {
+    .display(flex);
+    justify-content: space-between;
+    padding-bottom: 80px;
+    width: 100%;
+  }
+}
+
+.clientes-square {
+  .display(flex);
+  justify-content: space-between;
+  padding-bottom: 80px;
+  flex-direction: column;
+  width: 100%;
+  .line {
+    width: 100%;
+    .display(flex);
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  .item {
+    text-align: center;
+    width: 100%;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-left: 10px;
+    }
+    h2 {
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+  }
+  .client-light-blue {
+    background-color: #0af;
+  }
+  .client-blue {
+    background-color: #0074d8;
+  }
+  .client-green {
+    background-color: #3eca6a;
+  }
+  .client-purple {
+    background-color: #923d8b;
+  }
+  .client-salmon {
+    background-color: #e65450;
+  }
+  .client-yellow {
+    background-color: #fdab3e;
+  }
+}
+
+.img-items {
+  .display(flex);
+  justify-content:space-around;
+  align-items: flex-end;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+footer {
+  .clients {
+    padding: 80px 0;
+    height: 70vh;
+    p {
+      font-size: 24px;
+    }
+    h1 {
+      color: #353738;
+      font-size: 110px;
+      font-weight: 700;
+      line-height: 100px;
+      display: inline;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom:-10px;
+        left:0;
+        right:0;
+        width: 95%;
+        height: 8px;
+        margin: auto;
+        background: #000;
+      }
+    }
+  }
+  .contact {
+    padding: 45px 0;
+    background: #fff;
+    color: #d1d1d1;
+    a {
+      color: #d1d1d1;
+    }
+    .social-links {
+      font-size: 22px;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+
+  header {
+    h1 {
+      font-size: floor((@header-h1 * 0.70));
+      line-height: floor((@header-h1 * 0.80));
+    }
+    p {
+      font-size: floor((@header-p * 0.80));
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    .container {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .logo {
+        align-self: center;
+      }
+      .links {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+  header {
+    h1 {
+      font-size: floor((@header-h1 * 0.40));
+      line-height: floor((@header-h1 * 0.50));
+    }
+    p {
+      font-size: floor((@header-p * 0.50));
+    }
+  }
+  .expand-content {
+    h1 {
+      font-size: floor((@expand-h1 / 1.8));
+    }
+    h3 {
+      font-size: floor((@expand-h3 / 1.8));
+    }
+    p {
+      font-size: floor((@expand-p / 1.8));
+    }
+  }
+
+  footer {
+    .clients {
+      h1 {
+        font-size: 38px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
