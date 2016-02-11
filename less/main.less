@@ -77,7 +77,7 @@ header {
     font-weight: 400;
     line-height: 34px;
     color: #353738;
-    a {
+    strong {
       color: #0af;
     }
   }
@@ -347,14 +347,25 @@ footer {
     }
   }
   .expand-content {
+    padding: 30px 0;
     h1 {
-      font-size: floor((@expand-h1 / 1.8));
+      font-size: 18px;
     }
     h3 {
       font-size: floor((@expand-h3 / 1.8));
     }
     p {
       font-size: floor((@expand-p / 1.8));
+      line-height: 18px;
+    }
+    .close-div {
+      .scale(0.5);
+      right: 20px;
+    }
+    &.expand-content__expanded {
+      .close-div {
+        top: 20px;
+      }
     }
   }
 
